@@ -15,8 +15,7 @@ def createcm(summary=None, change=None):
 def hello_world():  #def  เป็นคำสำคัญสำหรับการสร้างฟังก์ชัน
    return 'Hello World' #ให้แสดงข้อความว่า Hello World ออกทางหน้าฟอร์ม
 
-
-@app.route('/data')
+@app.route('/data', methods=['GET'])
 def data():
     # here we want to get the value of user (i.e. ?user=some-value)
     user = request.args.get('user')
