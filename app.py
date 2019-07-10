@@ -15,9 +15,22 @@ def createcm(summary=None, change=None):
 def hello_world():  #def  เป็นคำสำคัญสำหรับการสร้างฟังก์ชัน
    return 'Hello World' #ให้แสดงข้อความว่า Hello World ออกทางหน้าฟอร์ม
 
+
+@app.route('/data')
+def data():
+    # here we want to get the value of user (i.e. ?user=some-value)
+    user = request.args.get('user')
+    return ("<h1>Hello %s!! </h1>" % user)
+    
+@app.route('/data')
+def data():
+    # here we want to get the value of user (i.e. ?user=some-value)
+    user = request.args.get('user')
+    return ("<h1>Hello %s!! </h1>" % user)
+
 @app.route('/button')
 def button():  
-   return '<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"><a href="https://pythonc3.herokuapp.com/createcm/25/25" class="w3-btn w3-blue">ส่งค่า</a>'
+   return '<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"><a href="https://pythonc3.herokuapp.com/data" class="w3-btn w3-blue">ส่งค่า</a><form action="https://pythonc3.herokuapp.com/data">user <input type="text" name="user" ><br>x1 <input type="text" name="x1" <br><input type="submit" value="Submit"></form>'
 
 if __name__ == '__main__':
    app.run()
