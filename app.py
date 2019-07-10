@@ -6,6 +6,10 @@ app = Flask(__name__)
 def Home(name):
     return ("<h1>Hello %s!! </h1>" % name)
 
+@app.route('/createcm', methods=['GET'])
+def foo():
+    return ("<h1>Hello %s!! </h1>" % summary)
+    
 @app.route('/golf')
 
 def hello_world():  #def  เป็นคำสำคัญสำหรับการสร้างฟังก์ชัน
