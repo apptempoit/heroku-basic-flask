@@ -6,8 +6,8 @@ app = Flask(__name__)
 def Home(name):
     return ("<h1>Hello %s!! </h1>" % name)
 
-@app.route('/createcm', methods=['GET'])
-def foo():
+@app.route('/createcm/<summary>/<change>')
+def createcm(summary=None, change=None):
     return ("<h1>Hello %s!! </h1>" % summary)
     
 @app.route('/golf')
