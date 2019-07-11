@@ -16,7 +16,8 @@ app = Flask(__name__)
 def makecalc():
     data = request.get_json()
     prediction = np.array2string(model.predict(data))
-    return ("<h1>Hello %s!! </h1>" % prediction)
+
+    return jsonify(prediction)
 
 
 @app.route('/createcm/<summary>/<change>')
@@ -52,7 +53,7 @@ def button():
 #if __name__ == '__main__':
 #   app.run()
 if __name__ == '__main__':
-    modelfile = 'models/final_prediction.pickle'
+    modelfile = 'final_prediction.pickle'
     model = p.load(open(modelfile, 'rb'))
-    app.run(debug=True, host='0.0.0.0')
+    app.run()
 app = Flask(__name__)
