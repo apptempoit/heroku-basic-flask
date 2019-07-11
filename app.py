@@ -13,6 +13,8 @@ app = Flask(__name__)
 
 @app.route('/api/', methods=['POST'])
 def makecalc():
+    modelfile = 'final_prediction.pickle'
+    model = p.load(open(modelfile, 'rb'))
     data = request.get_json()
     prediction = np.array2string(model.predict(data))
     return ("<h1>Hello %s!! </h1>" % prediction)
@@ -48,10 +50,5 @@ def query_strings():
 def button():  
    return '<form action="https://pythonc3.herokuapp.com/data">user <input type="text" name="user" ><br>x1 <input type="text" name="x1" <br><input type="submit" value="Submit"></form>'
 
-#if __name__ == '__main__':
-#   app.run()
 if __name__ == '__main__':
-    modelfile = 'final_prediction.pickle'
-    model = p.load(open(modelfile, 'rb'))
-    app.run(debug=True, host='http://pythonc3.herokuapp.com')
-
+    app.run()
