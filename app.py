@@ -54,4 +54,4 @@ if __name__ == '__main__':
     modelfile = 'final_prediction.pickle'
     model = p.load(open(modelfile, 'rb'))
     app.run(debug=True, host='0.0.0.0')
-app = Flask(__name__)
+
