@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect, url_for, flash, jsonify , render_template
 import numpy as np
-import pickle as p
+import pickle as pickle
 import json
 from numpy.core import multiarray
 
