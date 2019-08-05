@@ -24,8 +24,8 @@ from numpy.core import multiarray
     
 app=Flask(__name__)
 
+#@app.route('/')
 @app.route('/')
-@app.route('/index')
 def index():
     return flask.render_template('index.html')
 
@@ -48,3 +48,6 @@ def result():
         else:
             prediction='Income less that 50K'
         return render_template("result.html",prediction=prediction)
+
+if __name__ == '__main__':
+    app.run(debug=True)
