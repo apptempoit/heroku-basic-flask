@@ -27,7 +27,7 @@ app=Flask(__name__)
 #@app.route('/')
 @app.route('/')
 def index():
-    return flask.render_template('index.html')
+    return render_template('index.html')
 
 
 def ValuePredictor(to_predict_list):
